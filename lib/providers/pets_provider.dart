@@ -3,15 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:adopt_app/services/pets_service.dart';
 
 class PetsProvider extends ChangeNotifier {
-  List<Pet> pets = [
-    Pet(
-        name: "Lucifurr",
-        image: "https://i.ibb.co/P6VJ4pZ/smile-cat-1.png",
-        age: 2,
-        gender: "male")
-  ];
+  List<Pet> pets = [];
 
   void getPets() async {
     pets = await PetService().getPets();
+    notifyListeners();
   }
 }

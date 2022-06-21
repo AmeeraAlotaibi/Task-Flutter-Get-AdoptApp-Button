@@ -1,5 +1,4 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:json_serializable/builder.dart';
 part 'pet.g.dart';
 
 @JsonSerializable()
@@ -19,14 +18,14 @@ class Pet {
       required this.age,
       required this.gender});
 
-  // Pet.fromJson(Map<String, dynamic> json)
-  //     : id = json['id'] as int?,
-  //       name = json['name'] as String,
-  //       adopted = json['adopted'] as bool,
-  //       image = json['image'] as String,
-  //       age = json['age'] as int,
-  //       gender = json['gender'] as String;
+  Pet.fromJson(Map<String, dynamic> json)
+      : id = json['id'] as int?,
+        name = json['name'] as String,
+        adopted = json['adopted'] as bool,
+        image = json['image'] as String,
+        age = json['age'] as int,
+        gender = json['gender'] as String;
 
-  factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
-  Map<String, dynamic> toJson() => _$PetToJson(this);
+  // factory Pet.fromJson(Map<String, dynamic> json) => _$PetFromJson(json);
+  // Map<String, dynamic> toJson() => _$PetToJson(this);
 }
