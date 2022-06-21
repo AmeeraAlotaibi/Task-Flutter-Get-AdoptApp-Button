@@ -11,7 +11,7 @@ class PetsProvider extends ChangeNotifier {
         gender: "male")
   ];
 
-  void getPets() {
-    PetService().getPets();
+  void getPets() async {
+    pets = await PetService().getPets();
   }
 }
